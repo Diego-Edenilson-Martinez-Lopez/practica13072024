@@ -1,17 +1,20 @@
-package servicios.implementaciones;
+
+package com.example.PracticaDEML31072024.servicios.implementaciones;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import modelos.ProductoDEML;
-import servicios.interfaces.IProductoDEMLService;
-import repositorios.IProductoDEMLRepository;
+import com.example.PracticaDEML31072024.modelos.ProductoDEML;
+import com.example.PracticaDEML31072024.repositorios.IProductoDEMLRepository;
+import com.example.PracticaDEML31072024.servicios.interfaces.IProductoDEMLService;
+
 import java.util.List;
 import java.util.Optional;
+
 @Service
-public class ProductoDEMLService implements IProductoDEMLService{
+public class productoDEMLService implements IProductoDEMLService{
 
      @Autowired
     private IProductoDEMLRepository productoDEMLRepository;

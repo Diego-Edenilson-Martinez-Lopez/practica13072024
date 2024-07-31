@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
@@ -32,22 +33,22 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>ID</th>
             <th>Nombre</th>
             <th>Descripción</th>
-            <th>Acciones</th>
+            <th>Existencia</th>
+            <th>Precio</th>
+            <th>Fecha de Vencimiento</th>
+            <th>Estatus</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="item : ${productos}">
-            <td th:text="${item.id}"></td>
             <td th:text="${item.nombre}"></td>
             <td th:text="${item.descripcion}"></td>
-            <td>
-                <a th:href="@{/productos/details/{id} (id = ${item.id}) }" class="btn btn-outline-secondary">Detalles</a> |
-                <a th:href="@{/productos/edit/{id} (id = ${item.id}) }" class="btn btn-outline-info">Editar</a> |
-                <a th:href="@{/productos/remove/{id} (id = ${item.id}) }" class="btn btn-outline-danger">Eliminar</a>
-            </td>
+            <td th:text="${item.existencia}"></td>
+            <td th:text="${item.precio}"></td>
+            <td th:text="${#dates.format(item.fechaVencimiento, 'dd/MM/yyyy')}"></td>
+            <td th:text="${item.estatus}"></td>
         </tr>
         </tbody>
     </table>
@@ -55,9 +56,10 @@
     <nav aria-label="Page navigation example">
         <ul class="pagination">
             <li class="page-item" th:each="pageNumber : ${pageNumbers}">
-                <a class="page-link" th:href="@{|/productos=${pageNumber}|}" th:text="${pageNumber}"></a>
+                <a class="page-link" th:href="@{|/productos?page=${pageNumber}|}" th:text="${pageNumber}"></a>
             </li>
         </ul>
     </nav>
 
 </div>
+</html>

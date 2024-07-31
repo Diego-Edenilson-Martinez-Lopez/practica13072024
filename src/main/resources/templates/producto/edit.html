@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
@@ -7,24 +8,64 @@
     <h1>Editar Producto</h1>
     <form th:action="@{/productos/save}" th:object="${producto}" method="post">
         <input type="hidden" th:field="*{id}">
+        
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" placeholder="Escriba el nombre del grupo" required>
+                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" placeholder="Escriba el nombre del producto" required>
                 </div>
             </div>
         </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="existencia">Existencia</label>
+                    <input type="number" class="form-control" th:field="*{existencia}" id="existencia" placeholder="Escriba la existencia del producto" required>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input type="text" class="form-control" th:field="*{precio}" id="precio" placeholder="Escriba el precio del producto" required>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="fechaVencimiento">Fecha de Vencimiento</label>
+                    <input type="date" class="form-control" th:field="*{fechaVencimiento}" id="fechaVencimiento" required>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="estatus">Estatus</label>
+                    <input type="text" class="form-control" th:field="*{estatus}" id="estatus" placeholder="Escriba el estatus del producto" required>
+                </div>
+            </div>
+        </div>
+        
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
-                    <textarea class="form-control" th:field="*{descripcion}" id="descripcion" cols="12" rows="3" required></textarea>
+                    <textarea class="form-control" th:field="*{descripcion}" id="descripcion" cols="12" rows="3" placeholder="Escriba la descripción del producto" required></textarea>
                 </div>
             </div>
         </div>
+
         <hr>
         <button type="submit" class="btn btn-primary">Guardar cambios</button> |
-        <a th:href="@{/productos}">Regresar</a>
+        <a th:href="@{/productos}" class="btn btn-secondary">Regresar</a>
     </form>
 </div>
+</html>

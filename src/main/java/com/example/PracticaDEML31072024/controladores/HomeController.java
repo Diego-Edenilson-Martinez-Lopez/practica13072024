@@ -1,4 +1,4 @@
-package controladores;
+package com.example.PracticaDEML31072024.controladores;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

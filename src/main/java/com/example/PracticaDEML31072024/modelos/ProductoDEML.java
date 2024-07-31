@@ -1,4 +1,4 @@
-package modelos;
+package com.example.PracticaDEML31072024.modelos;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;
@@ -7,7 +7,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull; 
 
 @Entity
-@Table(name = "producto_deml")
+@Table(name = "productodeml")
 public class ProductoDEML {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
